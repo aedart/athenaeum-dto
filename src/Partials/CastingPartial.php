@@ -100,7 +100,8 @@ trait CastingPartial
         }
 
         foreach ($allowedTypes as $type) {
-            $result = match (true) {
+
+            $result = match(true) {
                 in_array($type, ['string', 'str']) && is_string($value) => $this->castAsString($value),
                 in_array($type, ['integer', 'int']) && is_integer($value) => $this->castAsInteger($value),
                 in_array($type, ['float', 'double']) && is_float($value) => $this->castAsFloat($value),
